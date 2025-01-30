@@ -1,16 +1,16 @@
-const contatos = { "whats-users" :
+const contatos = { "whats_users" :
                           [
                             {  
                               "id" : 1,    
                               "account"  : "Ricardo da Silva",
                               "nickname" : "Ricky",
-                              "created-since": 
+                              "created_since": 
                                                 {
                                                   "start" : "2015-08-23",
                                                   "end"   : "null"
                                                 }
                                               ,
-                              "profile-image": "img/contact1.png",
+                              "profile_image": "img/contact1.png",
                               "number" : "11987876567",
                               "background" : "#fccc5b",
                               "contacts": 
@@ -205,13 +205,13 @@ const contatos = { "whats-users" :
                               "id" : 2,    
                               "account"  : "Bernardo Xavier Ribeiro",
                               "nickname" : "BeeR",
-                              "created-since": 
+                              "created_since": 
                                                 {
                                                   "start" : "2020-02-13",
                                                   "end"   : "null"
                                                 }
                                               ,
-                              "profile-image": "img/contact2.png",
+                              "profile_image": "img/contact2.png",
                               "number" : "11966578996",
                               "background" : "#fccc5b",
                               "contacts": 
@@ -406,13 +406,13 @@ const contatos = { "whats-users" :
                               "id" : 3,    
                               "account"  : "Sandy Wilstern",
                               "nickname" : "Sand",
-                              "created-since": 
+                              "created_since": 
                                                 {
                                                   "start" : "2017-05-11",
                                                   "end"   : "null"
                                                 }
                                               ,
-                              "profile-image": "img/contact200.png",
+                              "profile_image": "img/contact200.png",
                               "number" : "11955577796",
                               "background" : "#cc5bfc",
                               "contacts": 
@@ -526,13 +526,13 @@ const contatos = { "whats-users" :
                               "id" : 4,    
                               "account"  : "Jonathan Xavier",
                               "nickname" : "Joe",
-                              "created-since": 
+                              "created_since": 
                                                 {
                                                   "start" : "2023-03-11",
                                                   "end"   : "null"
                                                 }
                                               ,
-                              "profile-image": "img/contact230.png",
+                              "profile_image": "img/contact230.png",
                               "number" : "1194457796",
                               "background" : "#c00bfc",
                               "contacts": 
@@ -568,3 +568,7 @@ const contatos = { "whats-users" :
                             }
                           ]
                         }
+
+module.exports = {
+  contatos
+ }
