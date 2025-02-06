@@ -1,6 +1,6 @@
 /****************************************************************************************************
- * Objetivo: Desenvolver um pequeno software com estados,região, etc...
- * Data:30/01/2024
+ * Objetivo: Desenvolver uma API para um projeto do WhatsApp
+ * Data:30/01/2025
  * Autor: Daniel
  * Versão: 1.0
  ****************************************************************************************************/
@@ -123,13 +123,18 @@ const getFiltrarPeloUsuarioENome = function(telefone, contato){
     let entrada = String(telefone)
     let segundaEntrada = String(contato)
     let status = false
-    let conversas = []
+    let conversas = {
+
+        nome:entrada,
+        contato: segundaEntrada,
+        mensagens:[]
+    }
 
     inicio.forEach(function(item){
         item.contacts.forEach(function(itemDoContato){
             if(String(item.number) === entrada && String(itemDoContato.name) === segundaEntrada){
                 status = true
-                conversas.push(itemDoContato.messages)
+                conversas.mensagens.push(itemDoContato.messages)
             }
         })
     })
@@ -141,4 +146,51 @@ const getFiltrarPeloUsuarioENome = function(telefone, contato){
     }
 }
 
-console.log(getFiltrarPeloUsuarioENome('11987876567','Julia Smith'))
+const pesquisarPalavraChave = function(telefone, palavra, contato){
+
+    let inicio = listandoContatos.contatos.whats_users
+    let phone = String(telefone)
+    let contat = String(contato)
+    let palav = String(palavra)
+    let status = false
+
+    let filtrando = {
+        nome: phone,
+        contato: contat,
+        palavra_chave: palav,
+        mensagens: []
+    }
+
+    inicio.forEach(function(item){
+        item.contacts.forEach(function(itemDoContato){
+            if(String(itemDoContato.name) == contat && (item.number) == phone){
+                status = true
+                itemDoContato.messages.forEach(function(itemMensagem){
+                    if(String(itemMensagem.content).toLowerCase().includes(palav.toLowerCase())){
+                        status = true
+                        filtrando.mensagens.push(itemMensagem)
+                    }
+                })
+            }
+        })
+    })
+
+    if(status == true){
+        return filtrando
+    }else{
+        return false
+    }
+    
+}
+
+console.log(getFiltrarPeloUsuarioENome('11987876567','Ana Maria'))
+
+module.exports = {
+
+    getListarDadosPorUsuario,
+    getDadosDoProfile,
+    getDadosDeContatoPorUsuario,
+    getConversasDeCadaUsuario,
+    getFiltrarPeloUsuarioENome,
+    pesquisarPalavraChave
+}
